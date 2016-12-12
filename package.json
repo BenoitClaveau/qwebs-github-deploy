@@ -1,0 +1,37 @@
+{
+    "name": "qwebs-github-deploy",
+    "version": "0.1.43",
+    "description": "Qwebs server to listen github webhooks",
+    "main": "index.js",
+    "dependencies": {
+        "qwebs": "^0.1.43"
+    },
+    "devDependencies": {
+        "jasmine-node": "latest",
+        "coveralls": "latest",
+        "istanbul": "latest"
+    },
+    "scripts": {
+        "pretest": "start mongod.exe --dbpath tests/data/db",
+        "test": "node node_modules/jasmine-node/bin/jasmine-node tests --verbose",
+        "test-cover": "istanbul cover node_modules/jasmine-node/bin/jasmine-node --captureExceptions tests/*.spec.js && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/BenoitClaveau/qwebs-github-deploy.git"
+    },
+    "keywords": [
+        "qwebs",
+        "github",
+        "deploy"
+    ],
+    "author": {
+        "name": "Benoît Claveau",
+        "email": "benoit.claveau@gmail.com"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/BenoitClaveau/qwebs-github-deploy/issues"
+    },
+    "homepage": "https://github.com/BenoitClaveau/qwebs-github-deploy"
+}
